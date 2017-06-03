@@ -19,13 +19,13 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer  = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     //发送请求
     [manager GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        int code =  [[responseObject objectForKey:@"code"] intValue];
+        int code = 1;// [[responseObject objectForKey:@"code"] intValue];
         if(success)
         {
             success(code, responseObject);

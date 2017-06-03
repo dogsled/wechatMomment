@@ -17,6 +17,9 @@
 		5A8E6BE61EE30FB000E06622 /* WeChatMomentsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BE51EE30FB000E06622 /* WeChatMomentsUITests.m */; };
 		5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BF71EE30FBD00E06622 /* QHttpManger.m */; };
 		5A8E6C001EE3163400E06622 /* QBMomnetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */; };
+		5A8E6C0D1EE3269A00E06622 /* QBUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C0C1EE3269A00E06622 /* QBUserModel.m */; };
+		5A8E6C101EE329DB00E06622 /* QBTweetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C0F1EE329DB00E06622 /* QBTweetsModel.m */; };
+		5A8E6C161EE32B1D00E06622 /* QBCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C151EE32B1D00E06622 /* QBCommentsModel.m */; };
 		A0521A3C68685A3503BD54AE /* libPods-WeChatMoments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F526EF9ABB4B6BC57944B00 /* libPods-WeChatMoments.a */; };
 		B89A8DAFF14575242DED47A7 /* libPods-WeChatMomentsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,14 @@
 		5A8E6BF71EE30FBD00E06622 /* QHttpManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHttpManger.m; sourceTree = "<group>"; };
 		5A8E6BFE1EE3163400E06622 /* QBMomnetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBMomnetsViewController.h; sourceTree = "<group>"; };
 		5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBMomnetsViewController.m; sourceTree = "<group>"; };
+		5A8E6C021EE31AAC00E06622 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		5A8E6C031EE31AC600E06622 /* UtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
+		5A8E6C0B1EE3269A00E06622 /* QBUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBUserModel.h; sourceTree = "<group>"; };
+		5A8E6C0C1EE3269A00E06622 /* QBUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBUserModel.m; sourceTree = "<group>"; };
+		5A8E6C0E1EE329DB00E06622 /* QBTweetsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBTweetsModel.h; sourceTree = "<group>"; };
+		5A8E6C0F1EE329DB00E06622 /* QBTweetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBTweetsModel.m; sourceTree = "<group>"; };
+		5A8E6C141EE32B1D00E06622 /* QBCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCommentsModel.h; sourceTree = "<group>"; };
+		5A8E6C151EE32B1D00E06622 /* QBCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCommentsModel.m; sourceTree = "<group>"; };
 		7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChatMomentsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C57991370A06F1FC0C8539 /* Pods-WeChatMomentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsUITests/Pods-WeChatMomentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C719A7C0A0E4A2C4BF30A9D /* Pods-WeChatMomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsTests/Pods-WeChatMomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +142,8 @@
 		5A8E6BBF1EE30FB000E06622 /* WeChatMoments */ = {
 			isa = PBXGroup;
 			children = (
+				5A8E6C041EE31F6200E06622 /* Models */,
+				5A8E6C011EE31A9500E06622 /* Macro */,
 				5A8E6BFC1EE315D500E06622 /* Sections */,
 				5A8E6BF31EE30FBD00E06622 /* AppDelegate */,
 				5A8E6BF41EE30FBD00E06622 /* Managers */,
@@ -210,6 +223,53 @@
 				5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */,
 			);
 			path = Moments;
+			sourceTree = "<group>";
+		};
+		5A8E6C011EE31A9500E06622 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6C021EE31AAC00E06622 /* AppMacro.h */,
+				5A8E6C031EE31AC600E06622 /* UtilsMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		5A8E6C041EE31F6200E06622 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6C071EE31FB800E06622 /* CommentsModel */,
+				5A8E6C061EE31F9800E06622 /* TweetsModel */,
+				5A8E6C051EE31F7700E06622 /* UserModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A8E6C051EE31F7700E06622 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6C0B1EE3269A00E06622 /* QBUserModel.h */,
+				5A8E6C0C1EE3269A00E06622 /* QBUserModel.m */,
+			);
+			name = UserModel;
+			path = PersonModel;
+			sourceTree = "<group>";
+		};
+		5A8E6C061EE31F9800E06622 /* TweetsModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6C0E1EE329DB00E06622 /* QBTweetsModel.h */,
+				5A8E6C0F1EE329DB00E06622 /* QBTweetsModel.m */,
+			);
+			path = TweetsModel;
+			sourceTree = "<group>";
+		};
+		5A8E6C071EE31FB800E06622 /* CommentsModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6C141EE32B1D00E06622 /* QBCommentsModel.h */,
+				5A8E6C151EE32B1D00E06622 /* QBCommentsModel.m */,
+			);
+			path = CommentsModel;
 			sourceTree = "<group>";
 		};
 		6E472662141E2991573EDCF0 /* Pods */ = {
@@ -506,7 +566,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8E6C0D1EE3269A00E06622 /* QBUserModel.m in Sources */,
 				5A8E6C001EE3163400E06622 /* QBMomnetsViewController.m in Sources */,
+				5A8E6C161EE32B1D00E06622 /* QBCommentsModel.m in Sources */,
+				5A8E6C101EE329DB00E06622 /* QBTweetsModel.m in Sources */,
 				5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */,
 				5A8E6BC21EE30FB000E06622 /* main.m in Sources */,
 				5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */,

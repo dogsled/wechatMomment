@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QBUserModel.h"
 
 @interface QBMomnetsViewController : UIViewController
+
+@property(nonatomic, strong) UITableView * tableView;
+@property(nonatomic, strong) NSArray * tweetsArr;
+@property(nonatomic, strong) QBUserModel * persion;
 
 @end

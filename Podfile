@@ -11,6 +11,7 @@ target 'WeChatMoments' do
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'PureLayout', '~> 2.0.6'
     pod 'MJRefresh', '~> 1.4.7'
+    pod 'YYModel', '~> 1.0.4'
 
   target 'WeChatMomentsTests' do
     inherit! :search_paths

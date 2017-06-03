@@ -7,8 +7,16 @@
 //
 
 #import "QBMomnetsViewController.h"
+#import "UtilsMacro.h"
+#import "AppMacro.h"
+#import "QHttpManger.h"
+#import "QBUserModel.h"
+#import "YYModel.h"
+#import "QBTweetsModel.h"
 
-@interface QBMomnetsViewController ()
+@interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property(nonatomic, copy) NSString * currentUser;
 
 @end
 
@@ -16,14 +24,73 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor redColor]];
-    // Do any additional setup after loading the view.
+    
+    [self initUI];
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - 初始化
+
+-(void)initUI
+{
+    _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
+//    _tableView.tableHeaderView =
+    
+//    [self.view addSubview:_tableView];
+    
+}
+
+-(void)initData
+{
+    _currentUser = @"jsmith";
+    
+    //接口测试
+//    NSString * url = KUSER_INFO_PATH(_currentUser);
+//    [QHttpManger GET:url success:^(int resultCode, id responseObject) {
+//        QBUserModel * person = [QBUserModel yy_modelWithJSON:responseObject];
+//        
+//        NSLog(@"person is %@", person.description);
+//        
+//    } failure:^(NSError *error) {
+//        ;
+//    }];
+  
+    
+//    [QHttpManger GET:KTWEETS_PATH(_currentUser); success:^(int resultCode, id responseObject) {
+//        _tweetsArr = [NSArray yy_modelArrayWithClass:[QBTweetsModel class] json:responseObject];
+//        NSLog(@"person is %@", _tweetsArr);
+//    } failure:^(NSError *error) {
+//        ;
+//    }];
+}
+
+
+#pragma mark - 实现代理方法
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 100;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+
 
 /*
 #pragma mark - Navigation
