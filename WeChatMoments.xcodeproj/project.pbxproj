@@ -10,13 +10,13 @@
 		34C33C53156CB3D0F17BD3B3 /* libPods-WeChatMomentsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */; };
 		5A8E6BC21EE30FB000E06622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC11EE30FB000E06622 /* main.m */; };
 		5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC41EE30FB000E06622 /* AppDelegate.m */; };
-		5A8E6BC81EE30FB000E06622 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC71EE30FB000E06622 /* ViewController.m */; };
 		5A8E6BCB1EE30FB000E06622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC91EE30FB000E06622 /* Main.storyboard */; };
 		5A8E6BCD1EE30FB000E06622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8E6BCC1EE30FB000E06622 /* Assets.xcassets */; };
 		5A8E6BD01EE30FB000E06622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8E6BCE1EE30FB000E06622 /* LaunchScreen.storyboard */; };
 		5A8E6BDB1EE30FB000E06622 /* WeChatMomentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BDA1EE30FB000E06622 /* WeChatMomentsTests.m */; };
 		5A8E6BE61EE30FB000E06622 /* WeChatMomentsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BE51EE30FB000E06622 /* WeChatMomentsUITests.m */; };
 		5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BF71EE30FBD00E06622 /* QHttpManger.m */; };
+		5A8E6C001EE3163400E06622 /* QBMomnetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */; };
 		A0521A3C68685A3503BD54AE /* libPods-WeChatMoments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F526EF9ABB4B6BC57944B00 /* libPods-WeChatMoments.a */; };
 		B89A8DAFF14575242DED47A7 /* libPods-WeChatMomentsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */; };
 /* End PBXBuildFile section */
@@ -45,10 +45,8 @@
 		1CD1807630C50CAF6AB5EEE4 /* Pods-WeChatMoments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.debug.xcconfig"; sourceTree = "<group>"; };
 		5A8E6BBD1EE30FB000E06622 /* WeChatMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8E6BC11EE30FB000E06622 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5A8E6BC31EE30FB000E06622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5A8E6BC41EE30FB000E06622 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5A8E6BC61EE30FB000E06622 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5A8E6BC71EE30FB000E06622 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5A8E6BC31EE30FB000E06622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WeChatMoments/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5A8E6BC41EE30FB000E06622 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = WeChatMoments/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		5A8E6BCA1EE30FB000E06622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A8E6BCC1EE30FB000E06622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A8E6BCF1EE30FB000E06622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +59,8 @@
 		5A8E6BE71EE30FB000E06622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8E6BF61EE30FBD00E06622 /* QHttpManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHttpManger.h; sourceTree = "<group>"; };
 		5A8E6BF71EE30FBD00E06622 /* QHttpManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHttpManger.m; sourceTree = "<group>"; };
+		5A8E6BFE1EE3163400E06622 /* QBMomnetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBMomnetsViewController.h; sourceTree = "<group>"; };
+		5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBMomnetsViewController.m; sourceTree = "<group>"; };
 		7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChatMomentsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C57991370A06F1FC0C8539 /* Pods-WeChatMomentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsUITests/Pods-WeChatMomentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C719A7C0A0E4A2C4BF30A9D /* Pods-WeChatMomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsTests/Pods-WeChatMomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,12 +131,9 @@
 		5A8E6BBF1EE30FB000E06622 /* WeChatMoments */ = {
 			isa = PBXGroup;
 			children = (
+				5A8E6BFC1EE315D500E06622 /* Sections */,
 				5A8E6BF31EE30FBD00E06622 /* AppDelegate */,
 				5A8E6BF41EE30FBD00E06622 /* Managers */,
-				5A8E6BC31EE30FB000E06622 /* AppDelegate.h */,
-				5A8E6BC41EE30FB000E06622 /* AppDelegate.m */,
-				5A8E6BC61EE30FB000E06622 /* ViewController.h */,
-				5A8E6BC71EE30FB000E06622 /* ViewController.m */,
 				5A8E6BC91EE30FB000E06622 /* Main.storyboard */,
 				5A8E6BCC1EE30FB000E06622 /* Assets.xcassets */,
 				5A8E6BCE1EE30FB000E06622 /* LaunchScreen.storyboard */,
@@ -175,6 +172,8 @@
 		5A8E6BF31EE30FBD00E06622 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				5A8E6BC31EE30FB000E06622 /* AppDelegate.h */,
+				5A8E6BC41EE30FB000E06622 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -194,6 +193,23 @@
 				5A8E6BF71EE30FBD00E06622 /* QHttpManger.m */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		5A8E6BFC1EE315D500E06622 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6BFD1EE315FF00E06622 /* Moments */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		5A8E6BFD1EE315FF00E06622 /* Moments */ = {
+			isa = PBXGroup;
+			children = (
+				5A8E6BFE1EE3163400E06622 /* QBMomnetsViewController.h */,
+				5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */,
+			);
+			path = Moments;
 			sourceTree = "<group>";
 		};
 		6E472662141E2991573EDCF0 /* Pods */ = {
@@ -490,7 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8E6BC81EE30FB000E06622 /* ViewController.m in Sources */,
+				5A8E6C001EE3163400E06622 /* QBMomnetsViewController.m in Sources */,
 				5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */,
 				5A8E6BC21EE30FB000E06622 /* main.m in Sources */,
 				5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */,
