@@ -20,6 +20,8 @@
 #import "UIKit+AFNetworking.h"
 #import "QBMomentsTableViewCell.h"
 #import "QBShareImgsView.h"
+#import "QBCommentsView.h"
+#import "YYText.h"
 
 @interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -126,74 +128,21 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     QBTweetsModel * tweetsModel = [_tweetsArr objectAtIndex:indexPath.row];
-    NSString* QBMomentsCellID = [NSString stringWithFormat:@"QBMomentsCellID_%lu", (unsigned long)tweetsModel.images.count];
     
+//    QBMomentsTableViewCell *cell =[[QBMomentsTableViewCell alloc]initWithModel:tweetsModel];
+    
+    
+    NSString* QBMomentsCellID = [NSString stringWithFormat:@"QBMomentsCellID_%lu", (unsigned long)tweetsModel.images.count];
     QBMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QBMomentsCellID];
     if (!cell) {
-        cell = [[QBMomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:QBMomentsCellID];
+        cell = [[QBMomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:QBMomentsCellID withModel:tweetsModel];
     }
+
     
     [cell.avaterImageView setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
     [cell.nickNameLabel setText:tweetsModel.sender.nick];
     [cell.contentLabel setText:tweetsModel.content];
-    
-    if (tweetsModel.images.count==1) {
-        NSDictionary *dicImage = tweetsModel.images.firstObject;
-        [cell.shareImgsView.imageview1 setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
-    }
-    else if (tweetsModel.images.count==2) {
-        NSDictionary *dicImage = tweetsModel.images.firstObject;
-        
-        
-        [cell.shareImgsView.imageview1 setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview2 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[1] objectForKey:@"url"]]];
-    }
-    else if (tweetsModel.images.count==3) {
-        NSDictionary *dicImage = tweetsModel.images.firstObject;
-        
-        
-        [cell.shareImgsView.imageview1 setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview2 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[1] objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview3 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[2] objectForKey:@"url"]]];
-    }
-    else if(tweetsModel.images.count == 4)
-    {
-        NSDictionary *dicImage = tweetsModel.images.firstObject;
-        [cell.shareImgsView.imageview1 setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview2 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[1] objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview3 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[2] objectForKey:@"url"]]];
-        [cell.shareImgsView.imageview4 setImageWithURL:[NSURL URLWithString:[tweetsModel.images[3] objectForKey:@"url"]]];
-    }
-    else
-    {
-        [cell.shareImgsView.imageview1 setImage:nil];
-    }
-//    if (tweetsModel.images.count>0) {
-//        NSDictionary *dicImage = tweetsModel.images.firstObject;
-//        [cell.shareImageView setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
-//    }
-//    else
-//    {
-//        [cell.shareImageView setImage:nil];
-//    }
-    
-    NSString * comment;
-    if (tweetsModel.comments.count>0) {
-        for (QBCommentsModel *commentModel in tweetsModel.comments) {
-            comment = commentModel.sender.nick;
-            comment = [comment stringByAppendingString:@":"];
-            comment = [comment stringByAppendingString:commentModel.content];
-            comment = [comment stringByAppendingString:@"\n"];
-            
-            comment = [comment stringByAppendingString:commentModel.sender.nick];
-            comment = [comment stringByAppendingString:@":"];
-            comment = [comment stringByAppendingString:commentModel.content];
-            comment = [comment stringByAppendingString:@"\n"];
-        }
-        [cell.comments setText:comment];
-    }
-    
-    
+
     return cell;
 }
 

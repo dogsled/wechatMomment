@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YYText.h"
 
 @interface QBCommentsView : UIView
 
+@property(nonatomic, strong) NSArray * commentsArr;
+@property(nonatomic, strong) NSMutableArray<YYLabel*> * commentsLabelArr;
+
+-(instancetype)initWithCommentArr:(NSArray*)commentsArr;
 @end

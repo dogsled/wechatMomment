@@ -10,7 +10,7 @@
 
 @interface QBShareImgsView : UIView
 
-@property(nonatomic, assign) int imageViewCount;
+@property(nonatomic, strong) NSArray * imagesArr;
 @property(nonatomic, strong) UIImageView * imageview1;
 @property(nonatomic, strong) UIImageView * imageview2;
 @property(nonatomic, strong) UIImageView * imageview3;
@@ -21,5 +21,6 @@
 @property(nonatomic, strong) UIImageView * imageview8;
 @property(nonatomic, strong) UIImageView * imageview9;
 
--(instancetype) initImageViewCount:(int)count;
+//-(instancetype) initImageViewCount:(int)count;
+-(instancetype) initImageUrls:(NSArray*)imageArr;
 @end

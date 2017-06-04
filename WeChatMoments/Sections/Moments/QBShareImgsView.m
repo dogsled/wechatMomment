@@ -9,13 +9,23 @@
 #import "QBShareImgsView.h"
 #import "PureLayout.h"
 #import "UtilsMacro.h"
+#import "UIKit+AFNetworking.h"
 
 @implementation QBShareImgsView
 
--(instancetype) initImageViewCount:(int)count
+//-(instancetype) initImageViewCount:(int)count
+//{
+//    if (self = [super init]) {
+//        _imageViewCount = count;
+//        [self initUI];
+//    }
+//    return self;
+//}
+
+-(instancetype) initImageUrls:(NSArray*)imageArr
 {
     if (self = [super init]) {
-        _imageViewCount = count;
+        _imagesArr = imageArr;
         [self initUI];
     }
     return self;
@@ -29,73 +39,90 @@
 
 -(void)updateViewConstraints
 {
-    if (_imageViewCount == 1) {
+    if (_imagesArr.count == 1) {
         [self.imageview1 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(200), AUTOSIZESCALE(150))];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
+        
+        [self.imageview1 setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
     }
-    else if (_imageViewCount == 2) {
-     
-        [self setView1Constraints];
-        [self setView2Constraints];
+    else if (_imagesArr.count >= 2) {
+        
+        for (int i = 2 ; i <= _imagesArr.count; i++) {
+            NSURL *imageUrl =  [NSURL URLWithString:[_imagesArr objectAtIndex:i-1]];
+
+            switch (i) {
+                case 2:
+                {
+                    [self setView1Constraints];
+                    [self setView2Constraints];
+                    [self.imageview1 setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
+                    [self.imageview2 setImageWithURL:imageUrl];
+                    
+                }
+                 break;
+                case 3:
+                {
+                    
+                    [self setView3Constraints];
+                    [self.imageview3 setImageWithURL:imageUrl];
+                }
+                    break;
+                case 4:
+                {
+                    [self setView4Constraints];
+                    [self.imageview4 setImageWithURL:imageUrl];
+                    
+                }
+                    break;
+                case 5:
+                {
+                    [self setView5Constraints];
+                    [self.imageview5 setImageWithURL:imageUrl];
+
+                    
+                }
+                    break;
+                case 6:
+                {
+                    [self setView6Constraints];
+                    [self.imageview6 setImageWithURL:imageUrl];
+
+                    
+                }
+                    break;
+                case 7:
+                {
+                    
+                    [self setView7Constraints];
+                    [self.imageview7 setImageWithURL:imageUrl];
+
+                }
+                    break;
+                case 8:
+                {
+                    
+                    [self setView8Constraints];
+                    [self.imageview8 setImageWithURL:imageUrl];
+
+                }
+                    break;
+                case 9:
+                {
+                    
+                    [self setView9Constraints];
+                    [self.imageview9 setImageWithURL:imageUrl];
+
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
     }
-    else if (_imageViewCount == 3) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-    }
-    else if (_imageViewCount == 4) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-    }
-    else if (_imageViewCount == 5) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-        [self setView5Constraints];
-    }
-    else if (_imageViewCount == 6) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-        [self setView5Constraints];
-        [self setView6Constraints];
-    }
-    else if (_imageViewCount == 7) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-        [self setView5Constraints];
-        [self setView6Constraints];
-        [self setView7Constraints];
-    }
-    else if (_imageViewCount == 8) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-        [self setView5Constraints];
-        [self setView6Constraints];
-        [self setView7Constraints];
-        [self setView8Constraints];
-    }
-    else if (_imageViewCount == 9) {
-        [self setView1Constraints];
-        [self setView2Constraints];
-        [self setView3Constraints];
-        [self setView4Constraints];
-        [self setView5Constraints];
-        [self setView6Constraints];
-        [self setView7Constraints];
-        [self setView8Constraints];
-        [self setView9Constraints];
-    }
+   
 }
 
 -(void)setView1Constraints
@@ -118,7 +145,7 @@
 {
     [self.imageview3 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(135), AUTOSIZESCALE(135))];
     [self.imageview3 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
-    if (_imageViewCount == 4) {
+    if (_imagesArr.count == 4) {
         [self.imageview3 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_imageview1 withOffset:5];
         [self.imageview3 autoAlignAxis:ALAxisVertical toSameAxisOfView:_imageview1 withOffset:0];
     }
@@ -132,7 +159,7 @@
 {
     [self.imageview4 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(135), AUTOSIZESCALE(135))];
     [self.imageview4 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
-    if (_imageViewCount == 4) {
+    if (_imagesArr.count == 4) {
         [self.imageview4 autoAlignAxis:ALAxisVertical toSameAxisOfView:_imageview2 withOffset:0];
         [self.imageview4 autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_imageview3 withOffset:0];
     }
