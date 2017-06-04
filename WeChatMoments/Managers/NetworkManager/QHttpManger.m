@@ -7,6 +7,7 @@
 //
 
 #import "QHttpManger.h"
+#import "SVProgressHUD.h"
 
 @implementation QHttpManger
 
@@ -19,17 +20,24 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer  = [AFJSONRequestSerializer serializer];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     //发送请求
     [manager GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        int code = 1;// [[responseObject objectForKey:@"code"] intValue];
+        
+        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+        int statusCode  = (int)response.statusCode;
+        if (statusCode != 200) {
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"请求异常，错误状态码为：%d, 请将问题反馈以便及时解决", statusCode]];
+        }
+        
         if(success)
         {
-            success(code, responseObject);
+            success(statusCode, responseObject);
         }
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if(failure)
             failure(error);

@@ -13,11 +13,15 @@
 #import "QBUserModel.h"
 #import "YYModel.h"
 #import "QBTweetsModel.h"
+#import "MJRefresh.h"
+#import "PureLayout.h"
+#import "QBHeadView.h"
+#import "UIKit+AFNetworking.h"
 
 @interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, copy) NSString * currentUser;
-
+@property(nonatomic, strong) UIImageView * avatarView;
 @end
 
 @implementation QBMomnetsViewController
@@ -37,12 +41,44 @@
 
 -(void)initUI
 {
-    _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-//    _tableView.delegate = self;
-//    _tableView.dataSource = self;
-//    _tableView.tableHeaderView =
+//    _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _tableView = [UITableView newAutoLayoutView];
     
-//    [self.view addSubview:_tableView];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    
+//    _headView  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 400)];
+
+
+    
+    _tableView.tableHeaderView = [[QBHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 400)];
+//    _tableView.tableHeaderView.backgroundColor = [UIColor redColor];
+    _tableView.contentInset = UIEdgeInsetsMake(-100, 0, 0, 0);
+    _tableView.tableFooterView = [UIView new];
+
+   [_tableView addLegendHeaderWithRefreshingBlock:^{
+       
+   }];
+    
+    [self.view addSubview:_tableView];
+    
+    [self updateViewConstraints];
+}
+
+-(void)updateViewConstraints
+{
+    [super updateViewConstraints];
+    
+//    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_tableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_tableView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [_tableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    
+
+    
+    
     
 }
 
@@ -51,18 +87,20 @@
     _currentUser = @"jsmith";
     
     //接口测试
-//    NSString * url = KUSER_INFO_PATH(_currentUser);
-//    [QHttpManger GET:url success:^(int resultCode, id responseObject) {
-//        QBUserModel * person = [QBUserModel yy_modelWithJSON:responseObject];
-//        
-//        NSLog(@"person is %@", person.description);
-//        
-//    } failure:^(NSError *error) {
-//        ;
-//    }];
+    NSString * url = KUSER_INFO_PATH(_currentUser);
+    [QHttpManger GET:url success:^(int resultCode, id responseObject) {
+        _persion = [QBUserModel yy_modelWithJSON:responseObject];
+        QBHeadView * headerView = (QBHeadView*) _tableView.tableHeaderView;
+        [headerView.avatarImageView setImageWithURL:[NSURL URLWithString:_persion.avatar]];
+        [headerView.profileImageView setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
+        NSLog(@"person is %@", _persion.description);
+        
+    } failure:^(NSError *error) {
+        ;
+    }];
   
     
-//    [QHttpManger GET:KTWEETS_PATH(_currentUser); success:^(int resultCode, id responseObject) {
+//    [QHttpManger GET:KTWEETS_PATH(_currentUser) success:^(int resultCode, id responseObject) {
 //        _tweetsArr = [NSArray yy_modelArrayWithClass:[QBTweetsModel class] json:responseObject];
 //        NSLog(@"person is %@", _tweetsArr);
 //    } failure:^(NSError *error) {
@@ -75,19 +113,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 100;
+    return 20;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testcell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"testcell"];
+    }
+    cell.textLabel.text = @"XD_下拉刷新测试";
+    return cell;
 }
 
 

@@ -14,8 +14,7 @@
 
 
 //屏幕缩放系数，基础图是6
-#define AUTOSIZESCALE(size)  (([UIScreen mainScreen].bounds.size.width)/414.0/3.0 * size)
-
+#define AUTOSIZESCALE(s)  ((float)s*([UIScreen mainScreen].bounds.size.width)/326/2)
 //获取设备屏幕尺寸
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
