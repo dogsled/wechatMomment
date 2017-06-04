@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QBShareImgsView : UIView
+
 @property(nonatomic, assign) int imageViewCount;
 @property(nonatomic, strong) UIImageView * imageview1;
 @property(nonatomic, strong) UIImageView * imageview2;
