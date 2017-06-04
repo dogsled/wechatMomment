@@ -44,19 +44,15 @@
 
 -(void)initUI
 {
-//    _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+
     _tableView = [UITableView newAutoLayoutView];
-    _tableView.estimatedRowHeight = 150;  //  随便设个不那么离谱的值
+    _tableView.estimatedRowHeight = 150;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
-//    _headView  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 400)];
 
 
-    
     _tableView.tableHeaderView = [[QBHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 350)];
-//    _tableView.tableHeaderView.backgroundColor = [UIColor redColor];
     _tableView.contentInset = UIEdgeInsetsMake(-100, 0, 0, 0);
     _tableView.tableFooterView = [UIView new];
 
@@ -65,7 +61,6 @@
    }];
     
     [self.view addSubview:_tableView];
-    
     [self updateViewConstraints];
 }
 
@@ -77,9 +72,6 @@
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    
-
-    
     
     
 }

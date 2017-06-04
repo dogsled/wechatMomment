@@ -18,5 +18,6 @@
 #define KEDEDEDColor 0xEDEDED
 #define K576B95Color 0x576B95
 #define KE6E6E4Color 0xE6E6E4
+#define KF3F3F5Color 0xF3F3F5
 
 #endif /* AppMacro_h */

@@ -24,89 +24,13 @@
 
 -(void) initUI
 {
-//    if (_imageViewCount == 1) {
-//       
-//        [self addSubview:self.imageview1];
-//    }
-//    else if (_imageViewCount == 2)
-//    {
-//       
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//  
-//    }
-//    else if (_imageViewCount == 3)
-//    {
-//        
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//    }
-//    else if (_imageViewCount == 4)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//    }
-//    else if (_imageViewCount == 5)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//        [self addSubview:_imageview5];
-//    }
-//    else if (_imageViewCount == 6)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//        [self addSubview:_imageview5];
-//        [self addSubview:_imageview6];
-//    }
-//    else if (_imageViewCount == 7)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//        [self addSubview:_imageview5];
-//        [self addSubview:_imageview6];
-//        [self addSubview:_imageview7];
-//    }
-//    else if (_imageViewCount == 8)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//        [self addSubview:_imageview5];
-//        [self addSubview:_imageview6];
-//        [self addSubview:_imageview7];
-//        [self addSubview:_imageview8];
-//    }
-//    else if (_imageViewCount == 9)
-//    {
-//        [self addSubview:_imageview1];
-//        [self addSubview:_imageview2];
-//        [self addSubview:_imageview3];
-//        [self addSubview:_imageview4];
-//        [self addSubview:_imageview5];
-//        [self addSubview:_imageview6];
-//        [self addSubview:_imageview7];
-//        [self addSubview:_imageview9];
-//    }
-    
-   
     [self updateViewConstraints];
 }
 
 -(void)updateViewConstraints
 {
     if (_imageViewCount == 1) {
-        [self.imageview1 autoSetDimensionsToSize:CGSizeMake(200, 150)];
+        [self.imageview1 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(200), AUTOSIZESCALE(150))];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];

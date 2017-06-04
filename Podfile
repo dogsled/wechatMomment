@@ -12,7 +12,8 @@ target 'WeChatMoments' do
     pod 'PureLayout', '~> 2.0.6'
     pod 'MJRefresh', '~> 1.4.7'
     pod 'YYModel', '~> 1.0.4'
-
+    pod 'YYText', '~> 1.0.7'
+    
   target 'WeChatMomentsTests' do
     inherit! :search_paths
     # Pods for testing

@@ -18,6 +18,7 @@ PODS:
   - PureLayout (2.0.6)
   - SVProgressHUD (2.1.2)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - PureLayout (~> 2.0.6)
   - SVProgressHUD (~> 2.1.2)
   - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -32,7 +34,8 @@ SPEC CHECKSUMS:
   PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 033984ab2658eccfb9322cf0e59e8dfad131473f
+PODFILE CHECKSUM: 6878792f9750fae7fd5938dd20a53890dc548371
 
 COCOAPODS: 1.2.1

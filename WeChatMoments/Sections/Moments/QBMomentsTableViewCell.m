@@ -54,7 +54,7 @@
     _comments.font = [UIFont systemFontOfSize:13];
     _comments.textAlignment =NSTextAlignmentLeft;
     _comments.numberOfLines = 0;
-    [_comments setBackgroundColor:[UIColor grayColor]];
+    [_comments setBackgroundColor:UIColorFromRGB(KF3F3F5Color)];
     [self addSubview:_comments];
     
     [self updateViewConstraints];
@@ -79,19 +79,6 @@
     [_contentLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_shareImgsView withOffset:-10];
     [_contentLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
     
-//    if (_imageCount == 1) {
-//        [_shareImageView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_avaterImageView withOffset:10];
-//        [_shareImageView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_contentLabel withOffset:10];
-//        [_shareImageView autoSetDimensionsToSize:CGSizeMake(200, 100)];
-//        [_shareImageView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
-////        [_shareImageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_comments withOffset:-10];
-//        [_shareImageView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
-//    }
-//    [_shareImageView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_avaterImageView withOffset:10];
-//    [_shareImageView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_contentLabel withOffset:10];
-//    [_shareImageView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
-//    [_shareImageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_comments withOffset:-10];
-//    [_shareImageView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
     
     [_shareImgsView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_avaterImageView withOffset:10];
     [_shareImgsView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_contentLabel withOffset:10];
