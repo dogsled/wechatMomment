@@ -21,7 +21,7 @@
 #import "QBMomentsTableViewCell.h"
 #import "QBShareImgsView.h"
 #import "QBCommentsView.h"
-#import "YYText.h"
+
 
 @interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
 

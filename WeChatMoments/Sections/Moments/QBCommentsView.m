@@ -38,10 +38,10 @@
 
         NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:comment];
         
-        text.yy_font = [UIFont systemFontOfSize:14];
+        text.yy_font = [UIFont systemFontOfSize:13];
         text.yy_color = [UIColor blackColor];
         [text yy_setColor:UIColorFromRGB(K576B95Color) range:markRange];
-        text.yy_lineSpacing = 5;
+        text.yy_lineSpacing = 0;
         
         YYLabel *label = [YYLabel newAutoLayoutView];
         [self addSubview:label];
@@ -66,7 +66,7 @@
         }
         [label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10];
         [label autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
-        [label autoSetDimension:ALDimensionHeight toSize:15];
+        [label autoSetDimension:ALDimensionHeight toSize:13];
         [label autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
     }
 }
