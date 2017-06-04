@@ -51,12 +51,11 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    
 //    _headView  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 400)];
 
 
     
-    _tableView.tableHeaderView = [[QBHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 400)];
+    _tableView.tableHeaderView = [[QBHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 350)];
 //    _tableView.tableHeaderView.backgroundColor = [UIColor redColor];
     _tableView.contentInset = UIEdgeInsetsMake(-100, 0, 0, 0);
     _tableView.tableFooterView = [UIView new];
@@ -206,7 +205,11 @@
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.layoutMargins = UIEdgeInsetsZero;
+    cell.separatorInset = UIEdgeInsetsZero;
+    cell.preservesSuperviewLayoutMargins = NO;
+}
 
 /*
 #pragma mark - Navigation

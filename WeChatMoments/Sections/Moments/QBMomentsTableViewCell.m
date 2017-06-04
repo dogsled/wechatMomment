@@ -9,6 +9,7 @@
 #import "QBMomentsTableViewCell.h"
 #import "PureLayout.h"
 #import "UtilsMacro.h"
+#import "AppMacro.h"
 #import "QBShareImgsView.h"
 
 @implementation QBMomentsTableViewCell
@@ -32,21 +33,17 @@
     [self addSubview:_avaterImageView];
     
     _nickNameLabel = [UILabel newAutoLayoutView];
-    _nickNameLabel.font = [UIFont boldSystemFontOfSize:15];
+    _nickNameLabel.font = [UIFont boldSystemFontOfSize:16];
     _nickNameLabel.textAlignment =NSTextAlignmentLeft;
-    _nickNameLabel.textColor = UIColorFromRGB(0x9B9B9B);
+    _nickNameLabel.textColor = UIColorFromRGB(K576B95Color);
     [self addSubview:_nickNameLabel];
     
     
     _contentLabel = [UILabel newAutoLayoutView];
-    _contentLabel.font = [UIFont systemFontOfSize:13];
+    _contentLabel.font = [UIFont systemFontOfSize:16];
     _contentLabel.textAlignment =NSTextAlignmentLeft;
     _contentLabel.numberOfLines = 0;
-//    _contentLabel.textColor = UIColorFromRGB(0x9B9B9B);
     [self addSubview:_contentLabel];
-    
-//    _shareImageView = [UIImageView newAutoLayoutView];
-//    [self addSubview:_shareImageView];
     
     
     _shareImgsView = [[QBShareImgsView alloc]initImageViewCount:_imageCount];
@@ -57,6 +54,7 @@
     _comments.font = [UIFont systemFontOfSize:13];
     _comments.textAlignment =NSTextAlignmentLeft;
     _comments.numberOfLines = 0;
+    [_comments setBackgroundColor:[UIColor grayColor]];
     [self addSubview:_comments];
     
     [self updateViewConstraints];
@@ -105,6 +103,7 @@
     [_comments autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_avaterImageView withOffset:10];
     [_comments autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
     [_comments autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
+    [_comments autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
    
 }
 

@@ -9,6 +9,7 @@
 #import "QBHeadView.h"
 #import "PureLayout.h"
 #import "UtilsMacro.h"
+#import "AppMacro.h"
 
 @implementation QBHeadView
 
@@ -23,8 +24,10 @@
 
 -(void) initUI
 {
+    [self setBackgroundColor:[UIColor whiteColor]];
+    
     _profileImageView = [UIImageView newAutoLayoutView];
-    _profileImageView.backgroundColor = [UIColor blackColor];
+    _profileImageView.backgroundColor = UIColorFromRGB(KEDEDEDColor);
     [_profileImageView setContentMode:UIViewContentModeScaleAspectFill];
     [self addSubview:_profileImageView];
 
@@ -48,8 +51,6 @@
     _nickNameLabel.textColor = [UIColor whiteColor];
     _nickNameLabel.text = @"jsom";
     [self addSubview:_nickNameLabel];
-   
-    
     
     [self updateViewConstraints];
 }

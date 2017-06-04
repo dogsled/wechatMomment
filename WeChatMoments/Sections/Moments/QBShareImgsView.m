@@ -106,7 +106,7 @@
 -(void)updateViewConstraints
 {
     if (_imageViewCount == 1) {
-        [self.imageview1 autoSetDimensionsToSize:CGSizeMake(200, 100)];
+        [self.imageview1 autoSetDimensionsToSize:CGSizeMake(200, 150)];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
