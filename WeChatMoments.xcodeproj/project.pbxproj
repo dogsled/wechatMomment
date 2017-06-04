@@ -21,6 +21,8 @@
 		5A8E6C0D1EE3269A00E06622 /* QBUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C0C1EE3269A00E06622 /* QBUserModel.m */; };
 		5A8E6C101EE329DB00E06622 /* QBTweetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C0F1EE329DB00E06622 /* QBTweetsModel.m */; };
 		5A8E6C161EE32B1D00E06622 /* QBCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6C151EE32B1D00E06622 /* QBCommentsModel.m */; };
+		5AA8C3A41EE3B4B200969B11 /* QBMomentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8C3A31EE3B4B200969B11 /* QBMomentsTableViewCell.m */; };
+		5AA8C3AD1EE3EAE100969B11 /* QBShareImgsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */; };
 		A0521A3C68685A3503BD54AE /* libPods-WeChatMoments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F526EF9ABB4B6BC57944B00 /* libPods-WeChatMoments.a */; };
 		B89A8DAFF14575242DED47A7 /* libPods-WeChatMomentsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,10 @@
 		5A8E6C0F1EE329DB00E06622 /* QBTweetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBTweetsModel.m; sourceTree = "<group>"; };
 		5A8E6C141EE32B1D00E06622 /* QBCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCommentsModel.h; sourceTree = "<group>"; };
 		5A8E6C151EE32B1D00E06622 /* QBCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCommentsModel.m; sourceTree = "<group>"; };
+		5AA8C3A21EE3B4B200969B11 /* QBMomentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBMomentsTableViewCell.h; sourceTree = "<group>"; };
+		5AA8C3A31EE3B4B200969B11 /* QBMomentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBMomentsTableViewCell.m; sourceTree = "<group>"; };
+		5AA8C3AB1EE3EAE100969B11 /* QBShareImgsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBShareImgsView.h; sourceTree = "<group>"; };
+		5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBShareImgsView.m; sourceTree = "<group>"; };
 		7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChatMomentsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C57991370A06F1FC0C8539 /* Pods-WeChatMomentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsUITests/Pods-WeChatMomentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C719A7C0A0E4A2C4BF30A9D /* Pods-WeChatMomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsTests/Pods-WeChatMomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +232,10 @@
 				5A8E6BFF1EE3163400E06622 /* QBMomnetsViewController.m */,
 				5A5B9C781EE38FC300B1ED18 /* QBHeadView.h */,
 				5A5B9C791EE38FC300B1ED18 /* QBHeadView.m */,
+				5AA8C3A21EE3B4B200969B11 /* QBMomentsTableViewCell.h */,
+				5AA8C3A31EE3B4B200969B11 /* QBMomentsTableViewCell.m */,
+				5AA8C3AB1EE3EAE100969B11 /* QBShareImgsView.h */,
+				5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */,
 			);
 			path = Moments;
 			sourceTree = "<group>";
@@ -576,9 +586,11 @@
 				5A8E6C161EE32B1D00E06622 /* QBCommentsModel.m in Sources */,
 				5A8E6C101EE329DB00E06622 /* QBTweetsModel.m in Sources */,
 				5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */,
+				5AA8C3A41EE3B4B200969B11 /* QBMomentsTableViewCell.m in Sources */,
 				5A8E6BC21EE30FB000E06622 /* main.m in Sources */,
 				5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */,
 				5A5B9C7A1EE38FC300B1ED18 /* QBHeadView.m in Sources */,
+				5AA8C3AD1EE3EAE100969B11 /* QBShareImgsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

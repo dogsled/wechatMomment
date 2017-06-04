@@ -12,7 +12,7 @@
 @interface QBMomnetsViewController : UIViewController
 
 @property(nonatomic, strong) UITableView * tableView;
-@property(nonatomic, strong) NSArray * tweetsArr;
+@property(nonatomic, strong) NSMutableArray * tweetsArr;
 @property(nonatomic, strong) QBUserModel * persion;
 
 @end

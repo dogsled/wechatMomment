@@ -11,12 +11,14 @@
 #import "AppMacro.h"
 #import "QHttpManger.h"
 #import "QBUserModel.h"
+#import "QBCommentsModel.h"
 #import "YYModel.h"
 #import "QBTweetsModel.h"
 #import "MJRefresh.h"
 #import "PureLayout.h"
 #import "QBHeadView.h"
 #import "UIKit+AFNetworking.h"
+#import "QBMomentsTableViewCell.h"
 
 @interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -43,7 +45,8 @@
 {
 //    _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _tableView = [UITableView newAutoLayoutView];
-    
+    _tableView.estimatedRowHeight = 150;  //  随便设个不那么离谱的值
+    _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -69,8 +72,7 @@
 -(void)updateViewConstraints
 {
     [super updateViewConstraints];
-    
-//    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeTop];
@@ -85,14 +87,18 @@
 -(void)initData
 {
     _currentUser = @"jsmith";
+    _tweetsArr = [NSMutableArray array];
     
     //接口测试
     NSString * url = KUSER_INFO_PATH(_currentUser);
     [QHttpManger GET:url success:^(int resultCode, id responseObject) {
         _persion = [QBUserModel yy_modelWithJSON:responseObject];
+        
         QBHeadView * headerView = (QBHeadView*) _tableView.tableHeaderView;
         [headerView.avatarImageView setImageWithURL:[NSURL URLWithString:_persion.avatar]];
         [headerView.profileImageView setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
+        [headerView.nickNameLabel setText:_persion.nick];
+        
         NSLog(@"person is %@", _persion.description);
         
     } failure:^(NSError *error) {
@@ -100,12 +106,20 @@
     }];
   
     
-//    [QHttpManger GET:KTWEETS_PATH(_currentUser) success:^(int resultCode, id responseObject) {
-//        _tweetsArr = [NSArray yy_modelArrayWithClass:[QBTweetsModel class] json:responseObject];
-//        NSLog(@"person is %@", _tweetsArr);
-//    } failure:^(NSError *error) {
-//        ;
-//    }];
+    [QHttpManger GET:KTWEETS_PATH(_currentUser) success:^(int resultCode, id responseObject) {
+       NSArray*  tempTweetsArr = [[NSArray yy_modelArrayWithClass:[QBTweetsModel class] json:responseObject] mutableCopy];
+        for (QBTweetsModel *model in tempTweetsArr) {
+            if (model.content  || model.images.count != 0) {
+                [_tweetsArr addObject:model];
+            }
+//             [_tweetsArr addObject:model];
+        }
+        NSLog(@"person is %@", _tweetsArr);
+        [_tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        ;
+    }];
 }
 
 
@@ -113,17 +127,48 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return _tweetsArr.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testcell"];
+    QBTweetsModel * tweetsModel = [_tweetsArr objectAtIndex:indexPath.row];
+    
+    QBMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"testcell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"testcell"];
+        cell = [[QBMomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"testcell"];
     }
-    cell.textLabel.text = @"XD_下拉刷新测试";
+    
+    [cell.avaterImageView setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
+    [cell.nickNameLabel setText:tweetsModel.sender.nick];
+    [cell.contentLabel setText:tweetsModel.content];
+    
+    if (tweetsModel.images.count>0) {
+        NSDictionary *dicImage = tweetsModel.images.firstObject;
+        [cell.shareImageView setImageWithURL:[NSURL URLWithString:[dicImage objectForKey:@"url"]]];
+    }
+    else
+    {
+        [cell.shareImageView setImage:nil];
+    }
+    NSString * comment;
+    if (tweetsModel.comments.count>0) {
+        for (QBCommentsModel *commentModel in tweetsModel.comments) {
+            comment = commentModel.sender.nick;
+            comment = [comment stringByAppendingString:@":"];
+            comment = [comment stringByAppendingString:commentModel.content];
+            comment = [comment stringByAppendingString:@"\n"];
+            
+            comment = [comment stringByAppendingString:commentModel.sender.nick];
+            comment = [comment stringByAppendingString:@":"];
+            comment = [comment stringByAppendingString:commentModel.content];
+            comment = [comment stringByAppendingString:@"\n"];
+        }
+        [cell.comments setText:comment];
+    }
+    
+    
     return cell;
 }
 

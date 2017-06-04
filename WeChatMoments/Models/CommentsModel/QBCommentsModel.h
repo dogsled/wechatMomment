@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "QBUserModel.h"
+
 
 @class QBUserModel;
 @interface QBCommentsModel : NSObject
 
 @property(nonatomic, copy) NSString * content;
-@property(nonatomic, strong) QBUserModel * user;
+@property(nonatomic, strong) QBUserModel * sender;
 
 @end

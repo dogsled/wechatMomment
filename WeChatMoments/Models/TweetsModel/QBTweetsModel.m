@@ -7,8 +7,11 @@
 //
 
 #import "QBTweetsModel.h"
+#import "QBCommentsModel.h"
 
 
 @implementation QBTweetsModel
-
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"comments":[QBCommentsModel class]};
+}
 @end
