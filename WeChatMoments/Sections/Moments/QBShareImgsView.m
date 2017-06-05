@@ -136,7 +136,7 @@
 -(void)setView2Constraints
 {
     [self.imageview2 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(135), AUTOSIZESCALE(135))];
-    [self.imageview2 autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_imageview1 withOffset:AUTOSIZESCALE(10)];
+    [self.imageview2 autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_imageview1 withOffset:5];
     [self.imageview2 autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_imageview1 withOffset:0];
     [self.imageview2 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
 }
