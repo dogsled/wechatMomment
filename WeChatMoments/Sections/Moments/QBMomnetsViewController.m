@@ -194,9 +194,7 @@
 {
 
     QBTweetsModel * tweetsModel = [_tweetsArr objectAtIndex:indexPath.row];
-    
 //    QBMomentsTableViewCell *cell =[[QBMomentsTableViewCell alloc]initWithModel:tweetsModel];
-    
     
     NSString* QBMomentsCellID = [NSString stringWithFormat:@"QBMomentsCellID_%lu", (unsigned long)tweetsModel.images.count];
     QBMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QBMomentsCellID];
