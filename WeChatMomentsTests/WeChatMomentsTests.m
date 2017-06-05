@@ -7,9 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "QBCache.h"
 
 @interface WeChatMomentsTests : XCTestCase
-
+@property (strong, nonatomic) QBCache *sharedCache;
 @end
 
 @implementation WeChatMomentsTests
@@ -18,7 +19,11 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
-
+- (void)test01ClearDiskCache{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Clear disk cache"];
+    
+ 
+}
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
