@@ -1,0 +1,149 @@
+commit 0369ccd7f6a8f93bedd57ab95f2ed03082991336
+Author: dogsled <dogsled@163.com>
+Date:   Mon Jun 5 20:22:26 2017 +0800
+
+    Create README.md
+
+commit 7ff0706b9c9c79950a5ce6fe19834a610d4a5600
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 20:17:55 2017 +0800
+
+    unit test ok
+
+commit 5b0fb7a28329eb8ae11bf037c4b9ad5849816408
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 19:41:20 2017 +0800
+
+    update cell layout
+
+commit 2aeef32d779f529e7db07aa313099792b3e668d8
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 19:33:39 2017 +0800
+
+    config build setting
+
+commit b0fb87004973c45d882deeafca704d1bbb7a24a9
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 19:22:40 2017 +0800
+
+    closed bitcode
+
+commit 62f6ad2b58126acda02a81330290a0b3487ea480
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 19:18:13 2017 +0800
+
+    add unit test
+
+commit 991947ba32cbb669730e5ec3d32973e6a54eb300
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 18:00:26 2017 +0800
+
+    add unit test
+
+commit d7a24720aa8212d7b86c199d01ef7abac0ad4e97
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 17:30:00 2017 +0800
+
+    clear up code
+
+commit 2bc83858e67380b11cff8fc47fc630a0a69868aa
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 16:11:19 2017 +0800
+
+    Page Demanding
+
+commit 2c0d8bbca79a94b642faf2225863ebe8febdaaa9
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 14:47:37 2017 +0800
+
+    clear up UI
+
+commit 6caffd44644b89528d12df090da33cb7aff7a5d8
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 14:05:17 2017 +0800
+
+    adjust imagedown operation
+
+commit 1fecea638b527e54b6e8b6205c74ea83b9742e9a
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 13:09:58 2017 +0800
+
+    update image Load task
+
+commit 77b17693ffae74eb4b674e2f4b595cd1bf3d3135
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 12:41:28 2017 +0800
+
+    add image cache
+
+commit 47134a2af9e57c39abecf63edbdc4bc7ad4dbb0c
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Mon Jun 5 00:06:41 2017 +0800
+
+    reset comments label size
+
+commit be5f91c8bc8cde087313cb29ca54aea13f346842
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 23:54:16 2017 +0800
+
+    all layout done
+
+commit 3027e0ce3de34b2c1ef6e7143f30158d5c0ab639
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 21:50:39 2017 +0800
+
+    add YYText
+
+commit 19610a0ffa938e19fc7368a1f3a81d41dec96203
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 21:50:16 2017 +0800
+
+    add Comments View and yyText libs
+
+commit 6124970f31898e34bac56bfd278766c2e3088661
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 20:54:13 2017 +0800
+
+    reset  layout
+
+commit bd3de4416e5478264231ced41196061005011804
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 19:37:31 2017 +0800
+
+    share image layout
+
+commit faf3ea4283ef967c64e6f9e13a31282d7aaf4b78
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 16:01:14 2017 +0800
+
+    tweets layout
+
+commit cf528b1bdc8dfcbdba32e3f8f7d403df31e7e3a8
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 11:10:55 2017 +0800
+
+    tableview head added
+
+commit fefb22c18beaf117e1fad5aa71ea3b5a85739438
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 02:02:07 2017 +0800
+
+    add model and lib yymodel
+
+commit 86cfa23bdbb7b64e424c07b41cb48857bcde3534
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sun Jun 4 00:12:53 2017 +0800
+
+    初始化入口
+
+commit e74f0b866823a5313011d3206294a6f54a78a368
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sat Jun 3 23:47:58 2017 +0800
+
+    init project
+
+commit e45704811ef8feefed1c671fd92fc3fd7258a8b9
+Author: quanbowei <quanbowei2008@126.com>
+Date:   Sat Jun 3 23:39:30 2017 +0800
+
+    Initial Commit
