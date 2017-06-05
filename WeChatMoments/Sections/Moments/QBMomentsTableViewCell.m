@@ -77,7 +77,7 @@
     [_avaterImageView autoSetDimensionsToSize:CGSizeMake(45, 45)];
     [_avaterImageView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
     
-    [_nickNameLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_avaterImageView withOffset:5];
+    [_nickNameLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:_avaterImageView withOffset:2];
     [_nickNameLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:_avaterImageView withOffset:10];
     [_nickNameLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
     [_nickNameLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_contentLabel withOffset:-10];

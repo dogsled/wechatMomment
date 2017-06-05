@@ -109,16 +109,21 @@
        [SVProgressHUD showErrorWithStatus:@"数据加载失败,请稍后再试"];
     }];
     
+    _tweetsArr = [NSMutableArray array];
+    _allTweetsArr = [NSMutableArray array];
     [self getTweetsFromRemote];
 }
 
 -(void)getTweetsFromRemote
 {
-    _tweetsArr = [NSMutableArray array];
-    _allTweetsArr = [NSMutableArray array];
-    [_tableView reloadData];
+   
+    
     [QHttpManger GET:KTWEETS_PATH(_currentUser) success:^(int resultCode, id responseObject) {
         if (resultCode == 200) {
+            
+            _tweetsArr = [NSMutableArray array];
+            _allTweetsArr = [NSMutableArray array];
+            [_tableView reloadData];
             
             NSArray*  tempTweetsArr = [[NSArray yy_modelArrayWithClass:[QBTweetsModel class] json:responseObject] mutableCopy];
             for (QBTweetsModel *model in tempTweetsArr) {
