@@ -32,16 +32,21 @@
     }
     if (imageFromCache) {
         self.image = imageFromCache;
+        NSLog(@"imageFromCache - 获取缓存");
         return;
     }
     NSOperation *operation = manager.operations[url.absoluteString];
-    if (operation == nil) { // 这张图片暂时没有下载任务
+    if (operation == nil) {
         operation = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"image - 开始下载文件 当前线程  %@",[NSThread currentThread]);
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+            [request setURL:[NSURL URLWithString:url.absoluteString]];
+            [request setHTTPMethod:@"GET"];
+            NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                                       returningResponse:nil
+                                                                   error:nil];
             // 下载图片
-        
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url.absoluteString] options:0
-                                                   error:nil];
-            // 数据加载失败
             if (data == nil) {
                 // 移除操作
                 [manager.operations removeObjectForKey:url.absoluteString];
@@ -55,18 +60,15 @@
             
             // 回到主线程显示图片
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               self.image = image;
+                self.image = image;
+                NSLog(@"image - 下载成功");
             }];
             // 移除操作
             [manager.operations removeObjectForKey:url.absoluteString];
         }];
         
-        // 添加到队列中
         [manager.queue addOperation:operation];
-        
-        // 存放到字典中
         manager.operations[url.absoluteString] = operation;
     }
-    
 }
 @end

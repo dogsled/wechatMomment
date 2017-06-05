@@ -36,8 +36,6 @@
     //这里很好的遵循了苹果规范,初始化的时候先调用父类,同时初始化了_cache,_queue,_timeout,_header这些属性
     _cache = cache;
     _queue = queue;
-    _timeout = 15.0;
-//    _headers = @{ @"Accept" : @"image/webp,image/*;q=0.8" };
     return self;
 }
 

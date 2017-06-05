@@ -13,7 +13,6 @@
 @interface QBWebImageManager : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary *operations;
-@property (nonatomic, assign) NSTimeInterval timeout;
 @property (nonatomic, strong) QBCache *cache;
 @property (nonatomic, strong) NSOperationQueue *queue;
 
