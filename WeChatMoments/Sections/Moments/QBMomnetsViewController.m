@@ -124,7 +124,7 @@
             for (QBTweetsModel *model in tempTweetsArr) {
                 if (model.content  || model.images.count != 0) {
                     [_allTweetsArr addObject:model];
-                    if(_tweetsArr.count <= 5)
+                    if(_tweetsArr.count < 5)
                     {
                         [_tweetsArr addObject:model];
                     }

@@ -98,6 +98,7 @@
 		5AA8C3A31EE3B4B200969B11 /* QBMomentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBMomentsTableViewCell.m; sourceTree = "<group>"; };
 		5AA8C3AB1EE3EAE100969B11 /* QBShareImgsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBShareImgsView.h; sourceTree = "<group>"; };
 		5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBShareImgsView.m; sourceTree = "<group>"; };
+		5AD5FD0A1EE577DD009DB804 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5AEEFCF81EE443A10068A2A2 /* QBCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCommentsView.h; sourceTree = "<group>"; };
 		5AEEFCF91EE443A10068A2A2 /* QBCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCommentsView.m; sourceTree = "<group>"; };
 		5AF6D9441EE5657100CC163B /* TestImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.jpg; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		356BD47669F02825955454FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AD5FD0A1EE577DD009DB804 /* XCTest.framework */,
 				0F526EF9ABB4B6BC57944B00 /* libPods-WeChatMoments.a */,
 				7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */,
 				EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */,

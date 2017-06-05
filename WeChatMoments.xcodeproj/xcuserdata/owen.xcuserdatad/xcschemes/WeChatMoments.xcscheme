@@ -20,6 +20,20 @@
                ReferencedContainer = "container:WeChatMoments.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A8E6BD51EE30FB000E06622"
+               BuildableName = "WeChatMomentsTests.xctest"
+               BlueprintName = "WeChatMomentsTests"
+               ReferencedContainer = "container:WeChatMoments.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
