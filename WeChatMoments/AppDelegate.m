@@ -20,8 +20,10 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     QBMomnetsViewController * momentsVC    = [[QBMomnetsViewController alloc]init];
-    self.window.rootViewController = momentsVC;
+    UINavigationController * momentsNav = [[UINavigationController alloc]initWithRootViewController:momentsVC];
+    self.window.rootViewController = momentsNav;
     return YES;
 }
 

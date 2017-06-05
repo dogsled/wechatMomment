@@ -21,6 +21,6 @@
 @property(nonatomic, strong) UIImageView * imageview8;
 @property(nonatomic, strong) UIImageView * imageview9;
 
-//-(instancetype) initImageViewCount:(int)count;
+
 -(instancetype) initImageUrls:(NSArray*)imageArr;
 @end

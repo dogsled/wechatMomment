@@ -13,6 +13,7 @@
 
 @property(nonatomic, strong) UITableView * tableView;
 @property(nonatomic, strong) NSMutableArray * tweetsArr;
+@property(nonatomic, strong) NSMutableArray * allTweetsArr;
 @property(nonatomic, strong) QBUserModel * persion;
 
 @end

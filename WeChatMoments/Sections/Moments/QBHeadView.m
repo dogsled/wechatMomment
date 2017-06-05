@@ -27,7 +27,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     
     _profileImageView = [UIImageView newAutoLayoutView];
-    _profileImageView.backgroundColor = UIColorFromRGB(KEDEDEDColor);
+    _profileImageView.backgroundColor = UIColorFromRGB(K576B95Color);
     [_profileImageView setContentMode:UIViewContentModeScaleAspectFill];
     [self addSubview:_profileImageView];
 
