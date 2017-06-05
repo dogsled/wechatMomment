@@ -19,9 +19,14 @@
 - (instancetype)initWithPath:(NSString *)path{
     self = [super init];
     if (!self) return nil;
+    
+    _ioQueue = dispatch_queue_create("com.idoqi.QBDiskCache", DISPATCH_QUEUE_SERIAL);
+    _diskCachePath = [self makeDiskCachePath:path];
+    
+    dispatch_sync(_ioQueue, ^{
+        _fileManager = [NSFileManager new];
+    });
 
-    _diskCachePath = [self makeDiskCachePath:path];;
-    _fileManager = [NSFileManager new];
     _countLimit = NSUIntegerMax;
     _costLimit = NSUIntegerMax;
     return self;

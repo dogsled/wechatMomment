@@ -34,6 +34,9 @@
         self.image = imageFromCache;
         return;
     }
+    if (placeholder) {
+        self.image = placeholder;
+    }
     NSOperation *operation = manager.operations[url.absoluteString];
     if (operation == nil) {
         operation = [NSBlockOperation blockOperationWithBlock:^{

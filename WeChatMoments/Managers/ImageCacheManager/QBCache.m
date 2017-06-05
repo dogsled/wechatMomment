@@ -13,14 +13,14 @@
 /**
  *  单例类的初始化方法
  */
-//+ (instancetype)sharedCache {
-//    static QBCache *cache = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        cache = [[self alloc] init];
-//    });
-//    return cache;
-//}
++ (instancetype)sharedCache {
+    static QBCache *cache = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cache = [[self alloc] init];
+    });
+    return cache;
+}
 
 - (instancetype)init {
     //在调用父类init之前先初始化一个内存缓存跟磁盘缓存

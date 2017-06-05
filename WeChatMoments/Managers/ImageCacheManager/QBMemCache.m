@@ -23,9 +23,9 @@
 }
 
 
--(BOOL)containsObjectForKey:(id)key
+-(BOOL)containsObjectForKey:(NSString*)key
 {
-    if ((UIImage*)[self objectForKey:key]==nil) {
+    if ([self objectForKey:key]) {
         return YES;
     }
     return NO;

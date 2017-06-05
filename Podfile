@@ -6,13 +6,14 @@ target 'WeChatMoments' do
   # use_frameworks!
 
   # Pods for WeChatMoments
-
+    pod 'Expecta'
     pod 'AFNetworking', '~> 3.1.0'
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'PureLayout', '~> 2.0.6'
     pod 'MJRefresh', '~> 1.4.7'
     pod 'YYModel', '~> 1.0.4'
     pod 'YYText', '~> 1.0.7'
+   
     
   target 'WeChatMomentsTests' do
     inherit! :search_paths

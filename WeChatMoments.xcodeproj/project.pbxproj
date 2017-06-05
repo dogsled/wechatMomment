@@ -29,6 +29,7 @@
 		5AA8C3A41EE3B4B200969B11 /* QBMomentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8C3A31EE3B4B200969B11 /* QBMomentsTableViewCell.m */; };
 		5AA8C3AD1EE3EAE100969B11 /* QBShareImgsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */; };
 		5AEEFCFA1EE443A10068A2A2 /* QBCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEEFCF91EE443A10068A2A2 /* QBCommentsView.m */; };
+		5AF6D9451EE5657100CC163B /* TestImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AF6D9441EE5657100CC163B /* TestImage.jpg */; };
 		A0521A3C68685A3503BD54AE /* libPods-WeChatMoments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F526EF9ABB4B6BC57944B00 /* libPods-WeChatMoments.a */; };
 		B89A8DAFF14575242DED47A7 /* libPods-WeChatMomentsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		5AA8C3AC1EE3EAE100969B11 /* QBShareImgsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBShareImgsView.m; sourceTree = "<group>"; };
 		5AEEFCF81EE443A10068A2A2 /* QBCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCommentsView.h; sourceTree = "<group>"; };
 		5AEEFCF91EE443A10068A2A2 /* QBCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCommentsView.m; sourceTree = "<group>"; };
+		5AF6D9441EE5657100CC163B /* TestImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.jpg; sourceTree = "<group>"; };
 		7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChatMomentsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C57991370A06F1FC0C8539 /* Pods-WeChatMomentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsUITests/Pods-WeChatMomentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C719A7C0A0E4A2C4BF30A9D /* Pods-WeChatMomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMomentsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMomentsTests/Pods-WeChatMomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		5A8E6BD91EE30FB000E06622 /* WeChatMomentsTests */ = {
 			isa = PBXGroup;
 			children = (
+				5AF6D9441EE5657100CC163B /* TestImage.jpg */,
 				5A8E6BDA1EE30FB000E06622 /* WeChatMomentsTests.m */,
 				5A8E6BDC1EE30FB000E06622 /* Info.plist */,
 			);
@@ -464,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF6D9451EE5657100CC163B /* TestImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,7 @@
 
 - (instancetype)init;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
++ (instancetype)sharedCache;
 
 - (BOOL)containsObjectForKey:(NSString *)key;
 - (void)containsObjectForKey:(NSString *)key withBlock:(void(^)(NSString *key, BOOL contains))block;

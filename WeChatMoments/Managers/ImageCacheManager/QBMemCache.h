@@ -11,6 +11,6 @@
 
 @interface QBMemCache : NSCache
 
-- (BOOL)containsObjectForKey:(id)key;
+- (BOOL)containsObjectForKey:(NSString*)key;
 
 @end
