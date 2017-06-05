@@ -18,24 +18,14 @@
 @property (strong, readonly) QBMemCache *memoryCache;
 @property (strong, readonly) QBDiskCache *diskCache;
 
-
-
-
 - (instancetype)init;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
-
-
-/**
- *  单例类初始化方法
- */
-//+ (instancetype)sharedCache;
-
 
 - (BOOL)containsObjectForKey:(NSString *)key;
 - (void)containsObjectForKey:(NSString *)key withBlock:(void(^)(NSString *key, BOOL contains))block;
 
 - (UIImage *)objectForKey:(NSString *)key;
-- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> object))block;
+- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, UIImage * object))block;
 
 - (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key;
 - (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key withBlock:(void(^)(void))block;

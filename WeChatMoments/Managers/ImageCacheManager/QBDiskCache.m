@@ -61,7 +61,7 @@
     if (data) {
         UIImage *image = [[UIImage alloc] initWithData:data];
 //        image = [self scaledImageForKey:key image:image];
-//        if (self.config.shouldDecompressImages) {
+//        if (shouldDecompressImages) {
 //            image = [UIImage decodedImageWithImage:image];
 //        }
         return image;
@@ -71,9 +71,16 @@
     }
 
 }
-- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> object))block
+- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, UIImage * object))block
 {
-    
+    dispatch_async(self.ioQueue, ^{
+        UIImage *image =  [self objectForKey:key];
+        if (block) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(key, image);
+            });
+        }
+    });
 }
 
 - (void)setObject:(NSData *)object forKey:(NSString *)key

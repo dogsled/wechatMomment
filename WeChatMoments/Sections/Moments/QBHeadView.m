@@ -37,11 +37,11 @@
     layer.borderColor = [[UIColor whiteColor] CGColor];
     layer.borderWidth = 2.0f;
     //设置边框阴影
-    layer.shadowColor = [UIColor blackColor].CGColor;//阴影颜色
+    layer.shadowColor = [UIColor grayColor].CGColor;//阴影颜色
     layer.shadowOffset = CGSizeMake(0, 0);//偏移距离
     layer.shadowOpacity = 1;//不透明度
     layer.shadowRadius = 1;//半径
-    [_avatarImageView setBackgroundColor:[UIColor greenColor]];
+    [_avatarImageView setBackgroundColor:[UIColor whiteColor]];
     [self addSubview:_avatarImageView];
     
     _nickNameLabel = [UILabel newAutoLayoutView];
@@ -49,7 +49,7 @@
     _nickNameLabel.numberOfLines = 1;
     _nickNameLabel.textAlignment =NSTextAlignmentRight;
     _nickNameLabel.textColor = [UIColor whiteColor];
-    _nickNameLabel.text = @"jsom";
+//    _nickNameLabel.text = @"jsom";
     [self addSubview:_nickNameLabel];
     
     [self updateViewConstraints];

@@ -31,7 +31,7 @@
 - (void)containsObjectForKey:(NSString *)key withBlock:(void(^)(NSString *key, BOOL contains))block;
 
 - (UIImage *)objectForKey:(NSString *)key;
-- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> object))block;
+- (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, UIImage *  object))block;
 
 - (void)setObject:(NSData *)object forKey:(NSString *)key;
 - (void)setObject:(NSData *)object forKey:(NSString *)key withBlock:(void(^)(void))block;

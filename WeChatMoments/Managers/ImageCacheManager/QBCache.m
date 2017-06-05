@@ -59,7 +59,7 @@
     return object;
 }
 
-- (void)objectForKey:(NSString *)key withBlock:(void (^)(NSString *key, id<NSCoding> object))block {
+- (void)objectForKey:(NSString *)key withBlock:(void (^)(NSString *key, UIImage * object))block {
     if (!block) return;
     UIImage * object = [_memoryCache objectForKey:key];
     if (object) {
@@ -110,8 +110,4 @@
     [_diskCache removeAllObjectsWithBlock:block];
 }
 
-- (NSString *)description {
-    if (_name) return [NSString stringWithFormat:@"<%@: %p> (%@)", self.class, self, _name];
-    else return [NSString stringWithFormat:@"<%@: %p>", self.class, self];
-}
 @end

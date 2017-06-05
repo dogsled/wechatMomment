@@ -13,7 +13,6 @@
 #import "QBShareImgsView.h"
 #import "QBCommentsView.h"
 
-
 @implementation QBMomentsTableViewCell
 
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier withModel:(QBTweetsModel *) tweetsModel
@@ -104,6 +103,7 @@
     [_commentsView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10 relation:NSLayoutRelationGreaterThanOrEqual];
 
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

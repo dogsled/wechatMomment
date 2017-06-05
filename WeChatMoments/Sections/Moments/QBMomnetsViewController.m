@@ -17,11 +17,9 @@
 #import "MJRefresh.h"
 #import "PureLayout.h"
 #import "QBHeadView.h"
-//#import "UIKit+AFNetworking.h"
 #import "QBMomentsTableViewCell.h"
 #import "QBShareImgsView.h"
 #import "QBCommentsView.h"
-
 #import "UIImageView+WebCache.h"
 
 
@@ -50,7 +48,7 @@
 {
 
     _tableView = [UITableView newAutoLayoutView];
-    _tableView.estimatedRowHeight = 150;
+    _tableView.estimatedRowHeight = 100;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -65,6 +63,7 @@
    }];
     
     [self.view addSubview:_tableView];
+    
     [self updateViewConstraints];
 }
 
@@ -95,7 +94,7 @@
         [headerView.profileImageView qb_setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
         [headerView.nickNameLabel setText:_persion.nick];
         
-        NSLog(@"person is %@", _persion.description);
+//        NSLog(@"person is %@", _persion.description);
         
     } failure:^(NSError *error) {
         ;
@@ -108,9 +107,8 @@
             if (model.content  || model.images.count != 0) {
                 [_tweetsArr addObject:model];
             }
-//             [_tweetsArr addObject:model];
         }
-        NSLog(@"person is %@", _tweetsArr);
+//        NSLog(@"person is %@", _tweetsArr);
         [_tableView reloadData];
         
     } failure:^(NSError *error) {
@@ -138,13 +136,14 @@
     QBMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QBMomentsCellID];
     if (!cell) {
         cell = [[QBMomentsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:QBMomentsCellID withModel:tweetsModel];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
     
     [cell.avaterImageView qb_setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
     [cell.nickNameLabel setText:tweetsModel.sender.nick];
     [cell.contentLabel setText:tweetsModel.content];
-
+   
     return cell;
 }
 
