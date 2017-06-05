@@ -37,8 +37,8 @@
 - (UIImage *)objectForKey:(NSString *)key;
 - (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> object))block;
 
-- (void)setObject:(UIImage *)object forKey:(NSString *)key;
-- (void)setObject:(UIImage *)object forKey:(NSString *)key withBlock:(void(^)(void))block;
+- (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key;
+- (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key withBlock:(void(^)(void))block;
 
 - (void)removeObjectForKey:(NSString *)key;
 - (void)removeObjectForKey:(NSString *)key withBlock:(void(^)(NSString *key))block;

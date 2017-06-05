@@ -9,7 +9,8 @@
 #import "QBShareImgsView.h"
 #import "PureLayout.h"
 #import "UtilsMacro.h"
-#import "UIKit+AFNetworking.h"
+//#import "UIKit+AFNetworking.h"
+#import "UIImageView+WebCache.h"
 
 @implementation QBShareImgsView
 
@@ -45,7 +46,7 @@
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.imageview1 autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0 relation:NSLayoutRelationGreaterThanOrEqual];
         
-        [self.imageview1 setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
+        [self.imageview1 qb_setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
     }
     else if (_imagesArr.count >= 2) {
         
@@ -57,8 +58,8 @@
                 {
                     [self setView1Constraints];
                     [self setView2Constraints];
-                    [self.imageview1 setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
-                    [self.imageview2 setImageWithURL:imageUrl];
+                    [self.imageview1 qb_setImageWithURL:[NSURL URLWithString:[_imagesArr objectAtIndex:0]]];
+                    [self.imageview2 qb_setImageWithURL:imageUrl];
                     
                 }
                  break;
@@ -66,20 +67,20 @@
                 {
                     
                     [self setView3Constraints];
-                    [self.imageview3 setImageWithURL:imageUrl];
+                    [self.imageview3 qb_setImageWithURL:imageUrl];
                 }
                     break;
                 case 4:
                 {
                     [self setView4Constraints];
-                    [self.imageview4 setImageWithURL:imageUrl];
+                    [self.imageview4 qb_setImageWithURL:imageUrl];
                     
                 }
                     break;
                 case 5:
                 {
                     [self setView5Constraints];
-                    [self.imageview5 setImageWithURL:imageUrl];
+                    [self.imageview5 qb_setImageWithURL:imageUrl];
 
                     
                 }
@@ -87,16 +88,14 @@
                 case 6:
                 {
                     [self setView6Constraints];
-                    [self.imageview6 setImageWithURL:imageUrl];
-
-                    
+                    [self.imageview6 qb_setImageWithURL:imageUrl];
                 }
                     break;
                 case 7:
                 {
                     
                     [self setView7Constraints];
-                    [self.imageview7 setImageWithURL:imageUrl];
+                    [self.imageview7 qb_setImageWithURL:imageUrl];
 
                 }
                     break;
@@ -104,7 +103,7 @@
                 {
                     
                     [self setView8Constraints];
-                    [self.imageview8 setImageWithURL:imageUrl];
+                    [self.imageview8 qb_setImageWithURL:imageUrl];
 
                 }
                     break;
@@ -112,7 +111,7 @@
                 {
                     
                     [self setView9Constraints];
-                    [self.imageview9 setImageWithURL:imageUrl];
+                    [self.imageview9 qb_setImageWithURL:imageUrl];
 
                 }
                     break;

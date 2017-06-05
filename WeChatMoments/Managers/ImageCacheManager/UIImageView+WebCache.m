@@ -20,23 +20,27 @@
 - (void)qb_setImageWithURL:(nullable NSURL *)url
        placeholderImage:(nullable UIImage *)placeholder
 {
-    if ([url isKindOfClass:[NSString class]]) url = [NSURL URLWithString:(id)url];
+    if ([url isKindOfClass:[NSString class]])
+        url = [NSURL URLWithString:(id)url];
+    
     QBWebImageManager* manager = [QBWebImageManager sharedManager];
     
-    // get the image from memory as quickly as possible
-    UIImage *imageFromMemory = nil;
+    // get the image from cache
+    UIImage *imageFromCache = nil;
     if (manager.cache) {
-        imageFromMemory = [manager.cache objectForKey:url.absoluteString];
+        imageFromCache = [manager.cache objectForKey:url.absoluteString];
     }
-    if (imageFromMemory) {
-        self.image = imageFromMemory;
+    if (imageFromCache) {
+        self.image = imageFromCache;
         return;
     }
     NSOperation *operation = manager.operations[url.absoluteString];
     if (operation == nil) { // 这张图片暂时没有下载任务
         operation = [NSBlockOperation blockOperationWithBlock:^{
             // 下载图片
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url.absoluteString]];
+        
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url.absoluteString] options:0
+                                                   error:nil];
             // 数据加载失败
             if (data == nil) {
                 // 移除操作
@@ -47,11 +51,11 @@
             UIImage *image = [UIImage imageWithData:data];
             
             // 存到字典中
-            [manager.cache setObject:image forKey:url.absoluteString];
+            [manager.cache setObject:image  withImageData:data forKey:url.absoluteString];
             
             // 回到主线程显示图片
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               self.image = imageFromMemory;
+               self.image = image;
             }];
             // 移除操作
             [manager.operations removeObjectForKey:url.absoluteString];

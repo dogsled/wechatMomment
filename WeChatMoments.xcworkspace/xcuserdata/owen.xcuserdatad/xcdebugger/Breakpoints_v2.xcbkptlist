@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeChatMoments/Managers/ImageCacheManager/UIImageView+WebCache.m"
-            timestampString = "518329675.849815"
+            timestampString = "518331955.402992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -25,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeChatMoments/Sections/Moments/QBMomnetsViewController.m"
-            timestampString = "518329964.056513"
+            filePath = "WeChatMoments/Managers/ImageCacheManager/UIImageView+WebCache.m"
+            timestampString = "518331955.402992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-initData"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-qb_setImageWithURL:placeholderImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeChatMoments/Managers/ImageCacheManager/UIImageView+WebCache.m"
+            timestampString = "518331955.402992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-qb_setImageWithURL:placeholderImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeChatMoments/Managers/ImageCacheManager/UIImageView+WebCache.m"
+            timestampString = "518332015.94417"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-qb_setImageWithURL:placeholderImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -71,14 +71,23 @@
     }
 }
 
-- (void)setObject:(UIImage *)object forKey:(NSString *)key {
-    [_memoryCache setObject:object forKey:key];
-    [_diskCache setObject:object forKey:key];
+- (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key {
+    if (object) {
+         [_memoryCache setObject:object forKey:key];
+    }
+    if (data) {
+        [_diskCache setObject:data forKey:key];
+    }
+    
 }
 
-- (void)setObject:(UIImage *)object forKey:(NSString *)key withBlock:(void (^)(void))block {
-    [_memoryCache setObject:object forKey:key];
-    [_diskCache setObject:object forKey:key withBlock:block];
+- (void)setObject:(UIImage *)object withImageData:(NSData*)data forKey:(NSString *)key withBlock:(void (^)(void))block {
+    if (object) {
+        [_memoryCache setObject:object forKey:key];
+    }
+    if (data) {
+        [_diskCache setObject:data forKey:key withBlock:block];
+    }
 }
 
 - (void)removeObjectForKey:(NSString *)key {

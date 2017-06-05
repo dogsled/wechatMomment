@@ -92,7 +92,7 @@
         
         QBHeadView * headerView = (QBHeadView*) _tableView.tableHeaderView;
         [headerView.avatarImageView qb_setImageWithURL:[NSURL URLWithString:_persion.avatar]];
-//        [headerView.profileImageView qb_setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
+        [headerView.profileImageView qb_setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
         [headerView.nickNameLabel setText:_persion.nick];
         
         NSLog(@"person is %@", _persion.description);
@@ -141,7 +141,7 @@
     }
 
     
-//    [cell.avaterImageView qb_setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
+    [cell.avaterImageView qb_setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
     [cell.nickNameLabel setText:tweetsModel.sender.nick];
     [cell.contentLabel setText:tweetsModel.content];
 
