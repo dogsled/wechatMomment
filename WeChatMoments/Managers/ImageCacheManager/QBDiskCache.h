@@ -18,8 +18,6 @@
 @property (assign) NSUInteger countLimit;
 @property (assign) NSUInteger costLimit;
 @property (assign) NSTimeInterval ageLimit;
-@property (assign) NSUInteger freeDiskSpaceLimit;
-@property (assign) NSTimeInterval autoTrimInterval;
 
 @property (nonatomic) dispatch_queue_t ioQueue;
 

@@ -28,6 +28,7 @@
 
 @property(nonatomic, copy) NSString * currentUser;
 @property(nonatomic, strong) UIImageView * avatarView;
+@property(nonatomic, assign) bool isRefresh;
 @end
 
 @implementation QBMomnetsViewController
@@ -68,9 +69,7 @@
     //pull to refresh
     __block typeof(self) weakSelf = self;
     [_tableView addLegendHeaderWithRefreshingBlock:^{
-       
         [weakSelf getTweetsFromRemote];
-        
     }];
     
     [_tableView addLegendFooterWithRefreshingBlock:^{
@@ -88,8 +87,6 @@
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_tableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    
-    
 }
 
 -(void)initData
@@ -111,7 +108,7 @@
     } failure:^(NSError *error) {
        [SVProgressHUD showErrorWithStatus:@"数据加载失败,请稍后再试"];
     }];
-
+    
     [self getTweetsFromRemote];
 }
 
@@ -119,6 +116,7 @@
 {
     _tweetsArr = [NSMutableArray array];
     _allTweetsArr = [NSMutableArray array];
+    [_tableView reloadData];
     [QHttpManger GET:KTWEETS_PATH(_currentUser) success:^(int resultCode, id responseObject) {
         if (resultCode == 200) {
             
@@ -133,10 +131,12 @@
                 }
             }
             [_tableView reloadData];
-            [_tableView.header endRefreshing];
+            
         }
+        [_tableView.header endRefreshing];
     } failure:^(NSError *error) {
-//        [_tableView reloadData];
+        _isRefresh = NO;
+        [_tableView.header endRefreshing];
         [SVProgressHUD showErrorWithStatus:@"数据加载失败,请稍后再试"];
     }];
 }
@@ -144,7 +144,7 @@
 {
     if (_tweetsArr && _allTweetsArr) {
         //数据加载完成
-        if (_tweetsArr.count == _allTweetsArr.count) {
+        if (_tweetsArr.count == _allTweetsArr.count &&_allTweetsArr.count >0) {
             _tableView.footer.state = MJRefreshFooterStateNoMoreData;
         }
         else
@@ -161,15 +161,15 @@
                 stepCount = _allTweetsArr.count - _tweetsArr.count;
             }
             
-            temp =  [_allTweetsArr subarrayWithRange:NSMakeRange(_tweetsArr.count-1, stepCount)];//截取元素
+            temp =  [_allTweetsArr subarrayWithRange:NSMakeRange(_tweetsArr.count, stepCount)];//截取元素
             
             for (int i=0; i<stepCount; i++) {
                 [tempIndexPathArr addObject:[NSIndexPath indexPathForRow:_tweetsArr.count+i inSection:0]];
             }
             [_tweetsArr addObjectsFromArray:temp];
             
-           [self.tableView beginUpdates];
-           [_tableView insertRowsAtIndexPaths:tempIndexPathArr withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView beginUpdates];
+            [_tableView insertRowsAtIndexPaths:tempIndexPathArr withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView endUpdates];
         }
         
@@ -187,6 +187,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     QBTweetsModel * tweetsModel = [_tweetsArr objectAtIndex:indexPath.row];
     
 //    QBMomentsTableViewCell *cell =[[QBMomentsTableViewCell alloc]initWithModel:tweetsModel];

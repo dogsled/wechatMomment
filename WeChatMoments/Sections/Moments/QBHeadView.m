@@ -20,8 +20,7 @@
     }
     return self;
 }
-#pragma mark - 自定义
-
+#pragma mark - 初始化UI
 -(void) initUI
 {
     [self setBackgroundColor:[UIColor whiteColor]];
@@ -37,10 +36,10 @@
     layer.borderColor = [[UIColor whiteColor] CGColor];
     layer.borderWidth = 2.0f;
     //设置边框阴影
-    layer.shadowColor = [UIColor grayColor].CGColor;//阴影颜色
-    layer.shadowOffset = CGSizeMake(0, 0);//偏移距离
-    layer.shadowOpacity = 1;//不透明度
-    layer.shadowRadius = 1;//半径
+    layer.shadowColor = [UIColor grayColor].CGColor;
+    layer.shadowOffset = CGSizeMake(0, 0);
+    layer.shadowOpacity = 1;
+    layer.shadowRadius = 1;
     [_avatarImageView setBackgroundColor:[UIColor whiteColor]];
     [self addSubview:_avatarImageView];
     
@@ -49,7 +48,6 @@
     _nickNameLabel.numberOfLines = 1;
     _nickNameLabel.textAlignment =NSTextAlignmentRight;
     _nickNameLabel.textColor = [UIColor whiteColor];
-//    _nickNameLabel.text = @"jsom";
     [self addSubview:_nickNameLabel];
     
     [self updateViewConstraints];

@@ -21,20 +21,18 @@
     if (!self) return nil;
 
     _diskCachePath = [self makeDiskCachePath:path];;
-    
-//    dispatch_sync(_ioQueue, ^{
-//        _fileManager = [NSFileManager new];
-//    });
     _fileManager = [NSFileManager new];
     _countLimit = NSUIntegerMax;
     _costLimit = NSUIntegerMax;
-    _ageLimit = DBL_MAX;
-    _freeDiskSpaceLimit = 0;
-    _autoTrimInterval = 60;
-    
     return self;
 }
 
+/**
+ 判断本地缓存是否包含key
+
+ @param key image URLStr
+ @return 是否包含
+ */
 - (BOOL)containsObjectForKey:(NSString *)key
 {
     NSString *cachePathForKey = [self defaultCachePathForKey:key];
@@ -154,6 +152,7 @@
     });
 }
 
+#pragma mark - 工具方法
 - (nullable NSString *)cachePathForKey:(nullable NSString *)key inPath:(nonnull NSString *)path {
     NSString *filename = [self cachedFileNameForKey:key];
     return [path stringByAppendingPathComponent:filename];
@@ -186,9 +185,6 @@
     if (data) {
         return data;
     }
-    
-    // fallback because of https://github.com/rs/SDWebImage/pull/976 that added the extension to the disk file name
-    // checking the key with and without the extension
     data = [NSData dataWithContentsOfFile:defaultPath.stringByDeletingPathExtension];
     if (data) {
         return data;

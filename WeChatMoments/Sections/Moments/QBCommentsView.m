@@ -24,7 +24,7 @@
     return self;
 }
 
-#pragma mark - 自定义
+#pragma mark - 初始化UI
 
 -(void) initUI
 {
@@ -37,10 +37,9 @@
         comment = [comment stringByAppendingString:commentsmodel.content];
 
         NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:comment];
-        
         text.yy_font = [UIFont systemFontOfSize:13];
         text.yy_color = [UIColor blackColor];
-        [text yy_setColor:UIColorFromRGB(K576B95Color) range:markRange];
+        [text yy_setColor:UIColorFromRGB(K576B95Color) range:markRange]; //字体染色
         text.yy_lineSpacing = 0;
         
         YYLabel *label = [YYLabel newAutoLayoutView];
@@ -54,6 +53,7 @@
 }
 -(void)updateViewConstraints
 {
+    //遍历约束
     for (int i = 0 ; i< _commentsLabelArr.count; i++) {
         YYLabel *label = [_commentsLabelArr objectAtIndex:i];
         if (i == 0 ) {

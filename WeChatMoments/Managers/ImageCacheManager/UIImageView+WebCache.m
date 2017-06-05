@@ -32,23 +32,20 @@
     }
     if (imageFromCache) {
         self.image = imageFromCache;
-//        NSLog(@"imageFromCache - 获取缓存");
         return;
     }
     NSOperation *operation = manager.operations[url.absoluteString];
     if (operation == nil) {
         operation = [NSBlockOperation blockOperationWithBlock:^{
             
-//            NSLog(@"image - 开始下载文件 当前线程  %@",[NSThread currentThread]);
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
             [request setURL:[NSURL URLWithString:url.absoluteString]];
             [request setHTTPMethod:@"GET"];
             NSData *data = [NSURLConnection sendSynchronousRequest:request
                                                        returningResponse:nil
                                                                    error:nil];
-            // 下载图片
+        
             if (data == nil) {
-                // 移除操作
                 [manager.operations removeObjectForKey:url.absoluteString];
                 return;
             }
@@ -59,7 +56,6 @@
             }
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.image = image;
-//                NSLog(@"image - 下载成功");
             }];
             // 存到字典中
             [manager.cache setObject:image  withImageData:data forKey:url.absoluteString];

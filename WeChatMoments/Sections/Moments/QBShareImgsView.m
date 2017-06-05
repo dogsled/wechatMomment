@@ -31,7 +31,7 @@
     }
     return self;
 }
-#pragma mark - 自定义
+#pragma mark - 初始化UI
 
 -(void) initUI
 {
@@ -124,6 +124,7 @@
    
 }
 
+#pragma mark - 设置约束
 -(void)setView1Constraints
 {
     [self.imageview1 autoSetDimensionsToSize:CGSizeMake(AUTOSIZESCALE(135), AUTOSIZESCALE(135))];
@@ -213,7 +214,7 @@
     [self.imageview9 autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_imageview7 withOffset:0];
     
 }
-
+#pragma mark - 懒加载
 - (UIImageView *)imageview1
 {
     if (!_imageview1) {

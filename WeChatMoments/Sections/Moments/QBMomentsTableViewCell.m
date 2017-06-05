@@ -32,7 +32,7 @@
     }
     return self;
 }
-#pragma mark - 自定义
+#pragma mark - 初始化UI
 
 -(void) initUI
 {
