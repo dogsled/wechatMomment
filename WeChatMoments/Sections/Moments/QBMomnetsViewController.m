@@ -17,10 +17,12 @@
 #import "MJRefresh.h"
 #import "PureLayout.h"
 #import "QBHeadView.h"
-#import "UIKit+AFNetworking.h"
+//#import "UIKit+AFNetworking.h"
 #import "QBMomentsTableViewCell.h"
 #import "QBShareImgsView.h"
 #import "QBCommentsView.h"
+
+#import "UIImageView+WebCache.h"
 
 
 @interface QBMomnetsViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -89,8 +91,8 @@
         _persion = [QBUserModel yy_modelWithJSON:responseObject];
         
         QBHeadView * headerView = (QBHeadView*) _tableView.tableHeaderView;
-        [headerView.avatarImageView setImageWithURL:[NSURL URLWithString:_persion.avatar]];
-        [headerView.profileImageView setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
+        [headerView.avatarImageView qb_setImageWithURL:[NSURL URLWithString:_persion.avatar]];
+//        [headerView.profileImageView qb_setImageWithURL:[NSURL URLWithString:_persion.profile_image]];
         [headerView.nickNameLabel setText:_persion.nick];
         
         NSLog(@"person is %@", _persion.description);
@@ -139,7 +141,7 @@
     }
 
     
-    [cell.avaterImageView setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
+//    [cell.avaterImageView qb_setImageWithURL:[NSURL URLWithString:tweetsModel.sender.avatar]];
     [cell.nickNameLabel setText:tweetsModel.sender.nick];
     [cell.contentLabel setText:tweetsModel.content];
 

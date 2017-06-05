@@ -36,7 +36,7 @@
     CALayer * layer = [_avatarImageView layer];
     layer.borderColor = [[UIColor whiteColor] CGColor];
     layer.borderWidth = 2.0f;
-    
+    //设置边框阴影
     layer.shadowColor = [UIColor blackColor].CGColor;//阴影颜色
     layer.shadowOffset = CGSizeMake(0, 0);//偏移距离
     layer.shadowOpacity = 1;//不透明度

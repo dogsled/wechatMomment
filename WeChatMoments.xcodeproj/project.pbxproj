@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		34C33C53156CB3D0F17BD3B3 /* libPods-WeChatMomentsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7870AA98FCEF8AEE8CBCA275 /* libPods-WeChatMomentsTests.a */; };
 		5A5B9C7A1EE38FC300B1ED18 /* QBHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B9C791EE38FC300B1ED18 /* QBHeadView.m */; };
+		5A6AA6D01EE4CA2C00208CF7 /* QBDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AA6CF1EE4CA2C00208CF7 /* QBDiskCache.m */; };
+		5A6AA6D31EE4CA5200208CF7 /* QBMemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AA6D21EE4CA5200208CF7 /* QBMemCache.m */; };
+		5A6AA6D61EE4CAD200208CF7 /* QBCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AA6D51EE4CAD200208CF7 /* QBCache.m */; };
+		5A6AA6DA1EE4CCCB00208CF7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AA6D91EE4CCCB00208CF7 /* UIImageView+WebCache.m */; };
+		5A6AA6DD1EE500AC00208CF7 /* QBWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6AA6DC1EE500AC00208CF7 /* QBWebImageManager.m */; };
 		5A8E6BC21EE30FB000E06622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC11EE30FB000E06622 /* main.m */; };
 		5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC41EE30FB000E06622 /* AppDelegate.m */; };
 		5A8E6BCB1EE30FB000E06622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8E6BC91EE30FB000E06622 /* Main.storyboard */; };
@@ -52,6 +57,16 @@
 		1CD1807630C50CAF6AB5EEE4 /* Pods-WeChatMoments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.debug.xcconfig"; sourceTree = "<group>"; };
 		5A5B9C781EE38FC300B1ED18 /* QBHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBHeadView.h; sourceTree = "<group>"; };
 		5A5B9C791EE38FC300B1ED18 /* QBHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBHeadView.m; sourceTree = "<group>"; };
+		5A6AA6CE1EE4CA2C00208CF7 /* QBDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBDiskCache.h; sourceTree = "<group>"; };
+		5A6AA6CF1EE4CA2C00208CF7 /* QBDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBDiskCache.m; sourceTree = "<group>"; };
+		5A6AA6D11EE4CA5200208CF7 /* QBMemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBMemCache.h; sourceTree = "<group>"; };
+		5A6AA6D21EE4CA5200208CF7 /* QBMemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBMemCache.m; sourceTree = "<group>"; };
+		5A6AA6D41EE4CAD200208CF7 /* QBCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCache.h; sourceTree = "<group>"; };
+		5A6AA6D51EE4CAD200208CF7 /* QBCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCache.m; sourceTree = "<group>"; };
+		5A6AA6D81EE4CCCB00208CF7 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		5A6AA6D91EE4CCCB00208CF7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		5A6AA6DB1EE500AC00208CF7 /* QBWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBWebImageManager.h; sourceTree = "<group>"; };
+		5A6AA6DC1EE500AC00208CF7 /* QBWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBWebImageManager.m; sourceTree = "<group>"; };
 		5A8E6BBD1EE30FB000E06622 /* WeChatMoments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatMoments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8E6BC11EE30FB000E06622 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A8E6BC31EE30FB000E06622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WeChatMoments/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -127,6 +142,23 @@
 				EECAA5B1D9165DB7ED8BC8B6 /* libPods-WeChatMomentsUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A6AA6CA1EE4C9E500208CF7 /* ImageCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				5A6AA6CE1EE4CA2C00208CF7 /* QBDiskCache.h */,
+				5A6AA6CF1EE4CA2C00208CF7 /* QBDiskCache.m */,
+				5A6AA6D11EE4CA5200208CF7 /* QBMemCache.h */,
+				5A6AA6D21EE4CA5200208CF7 /* QBMemCache.m */,
+				5A6AA6D41EE4CAD200208CF7 /* QBCache.h */,
+				5A6AA6D51EE4CAD200208CF7 /* QBCache.m */,
+				5A6AA6D81EE4CCCB00208CF7 /* UIImageView+WebCache.h */,
+				5A6AA6D91EE4CCCB00208CF7 /* UIImageView+WebCache.m */,
+				5A6AA6DB1EE500AC00208CF7 /* QBWebImageManager.h */,
+				5A6AA6DC1EE500AC00208CF7 /* QBWebImageManager.m */,
+			);
+			path = ImageCacheManager;
 			sourceTree = "<group>";
 		};
 		5A8E6BB41EE30FB000E06622 = {
@@ -206,6 +238,7 @@
 		5A8E6BF41EE30FBD00E06622 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				5A6AA6CA1EE4C9E500208CF7 /* ImageCacheManager */,
 				5A8E6BF51EE30FBD00E06622 /* NetworkManager */,
 			);
 			path = Managers;
@@ -587,14 +620,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8E6C0D1EE3269A00E06622 /* QBUserModel.m in Sources */,
+				5A6AA6D01EE4CA2C00208CF7 /* QBDiskCache.m in Sources */,
+				5A6AA6DA1EE4CCCB00208CF7 /* UIImageView+WebCache.m in Sources */,
 				5A8E6C001EE3163400E06622 /* QBMomnetsViewController.m in Sources */,
 				5A8E6C161EE32B1D00E06622 /* QBCommentsModel.m in Sources */,
 				5A8E6C101EE329DB00E06622 /* QBTweetsModel.m in Sources */,
+				5A6AA6D61EE4CAD200208CF7 /* QBCache.m in Sources */,
 				5A8E6BC51EE30FB000E06622 /* AppDelegate.m in Sources */,
 				5AEEFCFA1EE443A10068A2A2 /* QBCommentsView.m in Sources */,
 				5AA8C3A41EE3B4B200969B11 /* QBMomentsTableViewCell.m in Sources */,
 				5A8E6BC21EE30FB000E06622 /* main.m in Sources */,
 				5A8E6BF81EE30FBD00E06622 /* QHttpManger.m in Sources */,
+				5A6AA6D31EE4CA5200208CF7 /* QBMemCache.m in Sources */,
+				5A6AA6DD1EE500AC00208CF7 /* QBWebImageManager.m in Sources */,
 				5A5B9C7A1EE38FC300B1ED18 /* QBHeadView.m in Sources */,
 				5AA8C3AD1EE3EAE100969B11 /* QBShareImgsView.m in Sources */,
 			);
